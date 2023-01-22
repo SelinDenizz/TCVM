@@ -37,7 +37,7 @@ int main() {
 	ifstream inFile;
 
     //Variable to track the repetition of 2FA process (if != 0 , user verified)
-    int TwoFactorTrack(0);
+    int twoFactorTrack(0);
 
     //Variable to hold typed code which is entered by user
     string typedCode;
@@ -153,7 +153,7 @@ int main() {
         //In the case of write option is chosen
         else if (preference.find("write") != string :: npos) {
             
-            if(TwoFactorTrack == 0) {
+            if(twoFactorTrack == 0) {
 
                 //Obtaining mail address which has to be identical with the one within the records of authorized user's mail file
                 mailOb = employee.obtainMail(); //In succesfull case, mailOb is 1 otherwise 0
@@ -173,7 +173,7 @@ int main() {
                 authEmployee.write();
 
                 //Increment to track variable which refers that user has access to write on system (which'll embed contigous 2FA process)
-                TwoFactorTrack++;
+                twoFactorTrack++;
             }
 
             //In the case of user has no acces to write in the system
@@ -186,7 +186,7 @@ int main() {
                 unauthEmployee.write();
 
                 //Decrement to track variable which refers that user has no access to write on system (which'll embed contigous 2FA process)
-                TwoFactorTrack = -1;
+                twoFactorTrack = -1;
             }
         }
 
