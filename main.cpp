@@ -57,11 +57,14 @@ int main() {
     do {
 
         //Informing the user
-        cout << "Please, enter username and password: ";
+        cout << "Please, enter username: ";
 
         //Obtaining username 
         getline(cin, username);
-
+	
+	//Informing the user
+	cout << "\nPlease, enter password: ";
+	   
         //Obtaining password
         getline(cin, password);
         
